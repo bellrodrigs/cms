@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>CMSProtótipo</title>
+</head>
+
+<body>
+    <% include partials/menu %>
+    <br>
+    <h2 class="loginTitle">Sign Up</h2>
+    <div class="container" style="width:35%;">
+        <form method="POST">
+            <div class="form-group">
+                <label>Nome:</label>
+                <input type="text" class="form-control" name="nameUser">
+                <% if(error){ %>
+                    <%= error.name %>
+                  <% } %>
+            </div>
+            <div class="form-group">
+                <label>E-mail:</label>
+                <input type="email" class="form-control" name="emailUser" placeholder="exemple@exemple.com">
+            </div>
+            <div class="form-group">
+                <label>Senha:</label>
+                <input type="password" class="form-control" name="passwordUser" >
+            </div>
+            <div class="form-group">
+                <label>Confirmação de Senha:</label>
+                <input type="password" class="form-control" name="passwordConfirmUser" >
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+        </form>
+    </div>
+
+    <% include js/scripts %>
+</body>
+
+</html>
+
+<style>
+    .loginTitle {
+        text-align: center;
+        color: darkslategrey;
+    }
+</style>

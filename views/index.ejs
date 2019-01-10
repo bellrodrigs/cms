@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <title>CMSProtótipo</title>
+</head>
+
+<body>
+    <%include partials/menu %>
+    <br>
+
+    <div class="container">
+        <% array.forEach(function(card){ %>
+            <div class="card" style="width: 70rem; margin-bottom: 10px;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=card.title %></h5>
+                        <p class="card-text"><%= card.article %></p>
+                        <!-- Identifica o artigo pelo id -->
+                        <a href="/view/<%= card._id %>" class="card-link">Ver artigo</a>
+                        <a href="/edit/<%= card._id %>" class="card-link">Editar/Deletar</a>
+                    </div>
+                </div>
+        <% }); %>
+        
+    </div>
+    
+
+
+
+    <% include js/scripts %>
+</body>
+
+</html>

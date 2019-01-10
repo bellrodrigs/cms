@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+  <title>Publications</title>
+</head>
+
+<body>
+  <%include partials/menu %>
+  <br>
+
+  <div class="container">
+    <form method="POST">
+      <div class="form-group">
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" id="titlePublication" name="txttitle" value="<%= article.title %>">
+      </div>
+      <div class="form-group">
+        <label for="article">Article text</label>
+        <textarea class="form-control" id="articleText" rows="6" name="txttextarea"><%= article.article %></textarea>
+
+      </div>
+      <div style="float: right">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="button" class="btn btn-danger" onclick="removeArticle()">Deletar</button>
+      </div>
+    </form>
+  </div>
+
+
+  <% include js/scripts %>
+
+  <script>
+    function removeArticle() {
+      let id = "<%= article._id %>";
+      console.log("entrou na function");
+      $.post("/delete/" + id, function (data, status) {
+        location.href = "/";
+      });
+    }
+  </script>
+
+</body>
+
+</html>

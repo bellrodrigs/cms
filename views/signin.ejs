@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+  <title>CMSProtótipo</title>
+</head>
+
+<body>
+  <% include partials/menu %>
+  <br>
+  <h2 class="loginTitle">Login</h1>
+  <div class="container" style="width:25%;">
+    <form>
+      <div class="form-group">
+        <input type="email" class="form-control" id="emailUser" placeholder="exemple@exemple.com" style="margin-bottom:10px">
+        <input type="password" class="form-control" id="passwordUser" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+  </div>
+
+  <% include js/scripts %>
+</body>
+
+</html>
+
+<style>
+.loginTitle{
+  text-align: center;
+  color: darkslategrey;
+}
+</style>
